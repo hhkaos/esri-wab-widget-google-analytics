@@ -1,10 +1,7 @@
 define({
   root: {
-      Option1: "Option 1",
-      Option2: "Option 2",
-      Option3: "Option 3",
-      OptionChoice: "Fill in information",
-    style: "Style"
+      logMapEvents: "Log Map Events (Pan, Zoom Etc) to Google Analytics",
+      logLayerEvents: "Log Layer Events (load, add, remove) to Google Analytics"      
   },
   "ar": false,
   "cs": false,

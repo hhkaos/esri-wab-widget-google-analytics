@@ -29,28 +29,27 @@ define([
     lang,
     on) {
     return declare([BaseWidgetSetting, _WidgetsInTemplateMixin], {
-      //these two properties is defined in the BaseWidget
+        //these two properties is defined in the BaseWidget
         baseClass: 'my-app-setting',
-        startup: function () {        
+        
+        startup: function () {
+            this.inherited(arguments);      
             this.setConfig(this.config);
         },
 
         setConfig: function (config) {
-
-            // Set the config code here
-            document.getElementById("codeInput").value += this.config.code;
-    
+            // set the setting screen to match the config file
             this.config = config;
-            var codeInput = dijit.byId("codeInput");
-            this.codeInput.value = this.config.code
-
+            this.codeInput.set('value', this.config.code);
+            this.logMapEvents.setValue(this.config.logMapEvents);
+            this.logLayerEvents.setValue(this.config.logLayerEvents);
         },
 
         getConfig: function() {
-
-            // pull the config code from the settings menu here - get is slightly confusing.
-            var codeInput = dijit.byId("codeInput");
-            this.config.code = this.codeInput.value;
+            // pull the user config values from the settings menu here
+            this.config.code = this.codeInput.get('value');
+            this.config.logMapEvents = this.logMapEvents.getValue();
+            this.config.logLayerEvents = this.logLayerEvents.getValue();
             return this.config;
         }
 
