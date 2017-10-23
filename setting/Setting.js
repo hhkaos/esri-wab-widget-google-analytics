@@ -31,9 +31,9 @@ define([
     return declare([BaseWidgetSetting, _WidgetsInTemplateMixin], {
         //these two properties is defined in the BaseWidget
         baseClass: 'my-app-setting',
-        
+
         startup: function () {
-            this.inherited(arguments);      
+            this.inherited(arguments);
             this.setConfig(this.config);
         },
 
@@ -43,6 +43,7 @@ define([
             this.codeInput.set('value', this.config.code);
             this.logMapEvents.setValue(this.config.logMapEvents);
             this.logLayerEvents.setValue(this.config.logLayerEvents);
+            this.logWidgetEvents.setValue(this.config.logWidgetEvents);
         },
 
         getConfig: function() {
@@ -50,6 +51,7 @@ define([
             this.config.code = this.codeInput.get('value');
             this.config.logMapEvents = this.logMapEvents.getValue();
             this.config.logLayerEvents = this.logLayerEvents.getValue();
+            this.config.logWidgetEvents = this.logWidgetEvents.getValue();
             return this.config;
         }
 

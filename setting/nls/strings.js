@@ -1,7 +1,8 @@
 define({
   root: {
       logMapEvents: "Log Map Events (Pan, Zoom Etc) to Google Analytics",
-      logLayerEvents: "Log Layer Events (load, add, remove) to Google Analytics"      
+      logLayerEvents: "Log Layer Events (load, add, remove) to Google Analytics",
+      logWidgetEvents: "Log Widget Events (onopen) to Google Analytics"      
   },
   "ar": false,
   "cs": false,
